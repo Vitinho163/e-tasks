@@ -2,15 +2,18 @@ import { CheckCircle, House, Folder, PlusSquare, Note, SignOut, X } from "@phosp
 
 import { Container, Footer, Nav, Title, Header, Button } from "./styles";
 
-export function SideMenu() {
+export function SideMenu({ menuIsOpen, onCloseMenu }) {
   return (
-    <Container>
+    <Container data-menu-is-open={menuIsOpen}>
       <Header>
         <Title><CheckCircle /> e-Tasks</Title>
 
-        <Button>
-          <X />
-        </Button>
+        {
+          menuIsOpen &&
+          <Button onClick={onCloseMenu}>
+            <X />
+          </Button>
+        }
       </Header>
 
       <Nav>
@@ -21,10 +24,10 @@ export function SideMenu() {
       </Nav>
 
       <Footer>
-        <img src="https://github.com/rodrigorgtic.png" alt="Foto do usuário" />
+        <img src="https://github.com/vitinho163.png" alt="Foto do usuário" />
         <div>
-          <strong>Rodrigo Gonçalves</strong>
-          <small>rodrigo@email.com</small>
+          <strong>João Victor</strong>
+          <small>victor@email.com</small>
         </div>
 
         <Button type="button">
